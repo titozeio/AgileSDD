@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const readline = require('node:readline/promises');
+const { stdin, stdout } = require('node:process');
 
 const TEMPLATE_ROOT = path.join(__dirname, '..', 'templates', 'base');
 const TEMPLATE_FILES = [
@@ -40,7 +42,41 @@ function writeIfMissing(sourcePath, targetPath, variables, force) {
   return { status: 'written' };
 }
 
-function scaffold(targetDir, options = {}) {
+function isDirectoryEmpty(targetDir) {
+  if (!fs.existsSync(targetDir)) {
+    return true;
+  }
+
+  const entries = fs.readdirSync(targetDir);
+  return entries.length === 0;
+}
+
+async function prompt(question, defaultValue) {
+  const rl = readline.createInterface({ input: stdin, output: stdout });
+
+  try {
+    const suffix = defaultValue ? ` (${defaultValue})` : '';
+    const answer = await rl.question(`${question}${suffix}: `);
+    const trimmed = answer.trim();
+    return trimmed || defaultValue;
+  } finally {
+    rl.close();
+  }
+}
+
+async function confirm(question, defaultValue = false) {
+  const hint = defaultValue ? 'Y/n' : 'y/N';
+  const answer = await prompt(`${question} [${hint}]`, '');
+  const normalized = answer.trim().toLowerCase();
+
+  if (!normalized) {
+    return defaultValue;
+  }
+
+  return normalized === 'y' || normalized === 'yes';
+}
+
+async function scaffold(targetDir, options = {}) {
   const force = Boolean(options.force);
   const resolvedTarget = path.resolve(targetDir);
   const variables = {
@@ -60,26 +96,28 @@ function scaffold(targetDir, options = {}) {
 
 function printHelp() {
   process.stdout.write([
-    'Usage: create-agile-sdd [target-dir] [--force]',
+    'Usage: create-agile-sdd [target-dir] [--force] [--yes]',
     '',
     'Scaffolds the lean SDD Agile starter into the target directory.',
     '',
     'Examples:',
     '  create-agile-sdd',
     '  create-agile-sdd my-project',
-    '  create-agile-sdd . --force'
+    '  create-agile-sdd . --force',
+    '  create-agile-sdd --yes'
   ].join('\n') + '\n');
 }
 
-function main(argv) {
+function parseArgs(argv) {
   const args = [...argv];
-  let targetDir = '.';
+  let targetDir = null;
+  let sawTarget = false;
   let force = false;
+  let yes = false;
 
   for (const arg of args) {
     if (arg === '--help' || arg === '-h') {
-      printHelp();
-      return;
+      return { help: true };
     }
 
     if (arg === '--force' || arg === '-f') {
@@ -87,10 +125,55 @@ function main(argv) {
       continue;
     }
 
+    if (arg === '--yes' || arg === '-y') {
+      yes = true;
+      continue;
+    }
+
     targetDir = arg;
+    sawTarget = true;
   }
 
-  const result = scaffold(targetDir, { force });
+  return {
+    help: false,
+    targetDir,
+    sawTarget,
+    force,
+    yes
+  };
+}
+
+async function main(argv) {
+  const parsed = parseArgs(argv);
+
+  if (parsed.help) {
+    printHelp();
+    return;
+  }
+
+  let targetDir = parsed.targetDir;
+  if (!parsed.sawTarget && stdin.isTTY) {
+    targetDir = await prompt('Target directory', '.');
+  }
+
+  if (!targetDir) {
+    targetDir = '.';
+  }
+
+  const resolvedTarget = path.resolve(targetDir || '.');
+  const targetExists = fs.existsSync(resolvedTarget);
+  const targetNotEmpty = targetExists && !isDirectoryEmpty(resolvedTarget);
+  const useForce = parsed.force;
+
+  if (targetNotEmpty && !useForce && !parsed.yes && stdin.isTTY) {
+    const proceed = await confirm(`The target directory already contains files. Continue in ${resolvedTarget}?`, false);
+    if (!proceed) {
+      process.stdout.write('Aborted.\n');
+      return;
+    }
+  }
+
+  const result = await scaffold(resolvedTarget, { force: useForce });
   const written = result.results.filter((item) => item.status === 'written').length;
   const skipped = result.results.filter((item) => item.status === 'skipped').length;
 
@@ -103,6 +186,9 @@ module.exports = {
   main,
   scaffold,
   getProjectName,
-  render
+  render,
+  parseArgs,
+  isDirectoryEmpty,
+  prompt,
+  confirm
 };
-

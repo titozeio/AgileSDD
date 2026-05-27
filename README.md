@@ -35,12 +35,19 @@ Expected entry points:
 - `npm create agile-sdd@latest <target-dir>`
 - `npx create-agile-sdd <target-dir>`
 - `bunx create-agile-sdd <target-dir>`
+- `npx create-agile-sdd --yes <target-dir>`
 
 For local development:
 
 - `node .\bin\create-agile-sdd.cjs <target-dir>`
 
 It generates the baseline docs and structure needed to start working with SDD Agile inside the destination project.
+
+Behavior:
+
+- If you run it in a terminal without enough information, it prompts for the missing target directory.
+- If the target project already exists, it does not overwrite files unless you pass `--force`.
+- Use `--yes` to skip confirmation prompts in automation-friendly runs.
 
 ## Core Docs
 
