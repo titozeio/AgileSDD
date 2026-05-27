@@ -51,7 +51,7 @@ It generates the baseline docs and structure needed to start working with SDD Ag
 
 ## Why This Exists
 
-Most spec-driven frameworks are either too heavy, too verbose, or too eager to turn every project into a ritual. AgileSDD tries to stay useful when the project is still forming, when you want fast prototyping, and when you want agents to stay helpful instead of noisy.
+Most spec-driven frameworks are either too heavy, too verbose, or too eager to turn every project into a ritual. AgileSDD tries to stay useful when the project is still forming, when you want fast prototyping, and when you want agents to stay helpful instead of noisy while still feeling in control.
 
 The target is a system that feels close to how a good product team actually works:
 
