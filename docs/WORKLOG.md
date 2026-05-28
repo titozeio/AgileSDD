@@ -10,7 +10,7 @@ Keep the scaffold source and the generated scaffold output clearly separated.
 
 ## Current Focus
 
-- Keep the installable CLI surface working.
+- Keep the installable CLI and package smoke tests working.
 - Keep the base templates aligned with the scaffold product.
 - Avoid mixing product output with repo execution notes.
 
@@ -22,6 +22,5 @@ Keep the scaffold source and the generated scaffold output clearly separated.
 
 ## Next
 
-- Ensure `bin/create-agile-sdd.cjs` is present and wired to `src/index.cjs`.
-- Verify the CLI can be run from the package entrypoint.
+- Verify the packaged CLI can scaffold a target project end to end.
 - Then continue with the next product epic when the bootstrap is stable.
