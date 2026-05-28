@@ -2,19 +2,23 @@
 
 Short repo-level tracking for the scaffold itself.
 
-`specs/` contains the files that will be installed into a target project. This worklog is only for this repository's own progress.
+`templates/base/` contains the files that will be installed into a target project. This worklog is only for this repository's own progress.
+
+## Current Goal
+
+Keep the scaffold source and the generated scaffold output clearly separated.
 
 ## Current Focus
 
-- Restore the installable CLI surface.
-- Keep the base docs aligned with the scaffold product.
-- Avoid mixing product epics with day-to-day repo execution notes.
+- Keep the installable CLI surface working.
+- Keep the base templates aligned with the scaffold product.
+- Avoid mixing product output with repo execution notes.
 
 ## Done
 
 - Confirmed the scaffold structure and documentation baseline.
 - Identified that `bin/` needed an explicit exception in `.gitignore`.
-- Added a repo-level worklog to keep execution notes separate from epic specs.
+- Added a repo-level worklog to keep execution notes separate from scaffold output.
 
 ## Next
 

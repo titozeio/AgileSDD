@@ -52,10 +52,8 @@ Behavior:
 ## Core Docs
 
 - `AGENTS.md`: the constitution for agents
-- `docs/ROADMAP.md`: the epic-level roadmap
-- `docs/ARCHITECTURE.md`: the lightweight architecture reference
 - `docs/WORKLOG.md`: short repo-level execution tracking
-- `specs/SPECS.md`: the default spec output installed into a target project
+- `templates/base/`: the default scaffold output installed into a target project
 
 ## Why This Exists
 
@@ -70,4 +68,4 @@ The target is a system that feels close to how a good product team actually work
 
 ## Current Status
 
-This repository is the scaffold product itself. The next step is to publish the package and make the installer available for other projects.
+This repository is the scaffold product itself. The next step is to keep the CLI and templates aligned, then publish the package for use in other projects.
