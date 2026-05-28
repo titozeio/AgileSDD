@@ -33,6 +33,11 @@ Rules:
 - If an epic changes during execution, update docs first.
 - If a task is blocked by missing information, ask the developer with a focused question.
 
+## Repo Tracking
+
+- Use `docs/WORKLOG.md` for short, repo-level progress tracking when working on the scaffold itself.
+- Keep `specs/` for the product's epic-level spec/plan/task flow.
+
 ## Roles
 
 - Product Manager agents may work in `spec`, `plan`, `tasks`, and `review`.
