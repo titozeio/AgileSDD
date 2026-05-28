@@ -11,6 +11,7 @@ Keep the scaffold source and the generated scaffold output clearly separated.
 ## Current Focus
 
 - Keep the installable CLI and package smoke tests working.
+- Keep the packaging checks easy to run before publication.
 - Keep the base templates aligned with the scaffold product.
 - Avoid mixing product output with repo execution notes.
 
