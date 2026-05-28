@@ -10,13 +10,13 @@
     "cli",
     "templates"
   ],
-  "homepage": "https://github.com/your-org/create-agile-sdd",
+  "homepage": "https://github.com/titozeio/AgileSDD",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/create-agile-sdd.git"
+    "url": "https://github.com/titozeio/AgileSDD.git"
   },
   "bugs": {
-    "url": "https://github.com/your-org/create-agile-sdd/issues"
+    "url": "https://github.com/titozeio/AgileSDD/issues"
   },
   "bin": {
     "create-agile-sdd": "./bin/create-agile-sdd.cjs"
