@@ -1,0 +1,46 @@
+{
+  "name": "create-agile-sdd",
+  "version": "0.1.0",
+  "description": "Lean CLI to scaffold the Agile SDD workflow into another project.",
+  "type": "commonjs",
+  "keywords": [
+    "agile",
+    "sdd",
+    "scaffold",
+    "cli",
+    "templates"
+  ],
+  "homepage": "https://github.com/titozeio/AgileSDD",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/titozeio/AgileSDD.git"
+  },
+  "bugs": {
+    "url": "https://github.com/titozeio/AgileSDD/issues"
+  },
+  "bin": {
+    "create-agile-sdd": "./bin/create-agile-sdd.cjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "pack:check": "npm pack --dry-run",
+    "prepublishOnly": "npm test"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "create-agile-sdd": "file:create-agile-sdd-0.1.0.tgz"
+  }
+}
