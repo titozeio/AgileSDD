@@ -4,6 +4,8 @@
 
 A lightweight installable scaffold for combining Spec Driven Development with Agile.
 
+This folder mirrors the default spec docs that the scaffold installs into a target project. It is not the live task tracker for this repository.
+
 The framework is meant to be reused across projects, so the primary output is a command-line starter plus the docs and templates it installs.
 
 ## Why

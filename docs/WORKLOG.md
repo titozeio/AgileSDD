@@ -2,6 +2,8 @@
 
 Short repo-level tracking for the scaffold itself.
 
+`specs/` contains the files that will be installed into a target project. This worklog is only for this repository's own progress.
+
 ## Current Focus
 
 - Restore the installable CLI surface.

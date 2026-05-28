@@ -1,5 +1,7 @@
 # EPIC00 - Bootstrap the Framework
 
+This file is the default scaffold output for a target project. Use `docs/WORKLOG.md` for this repository's live progress.
+
 ## Objective
 
 Create the first working version of the SDD Agile scaffold product so the repository can be published and installed into future projects.

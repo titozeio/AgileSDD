@@ -1,5 +1,7 @@
 # Program Planner - Task Backlog
 
+This file is the default scaffold output for a target project. Use `docs/WORKLOG.md` for this repository's live progress.
+
 Status legend:
 
 - `[ ]` pending

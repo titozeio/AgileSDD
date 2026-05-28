@@ -36,7 +36,8 @@ Rules:
 ## Repo Tracking
 
 - Use `docs/WORKLOG.md` for short, repo-level progress tracking when working on the scaffold itself.
-- Keep `specs/` for the product's epic-level spec/plan/task flow.
+- Treat `specs/` as the default docs the scaffold installs into a target project, not as the live tracker for this repository.
+- Keep live repo execution notes out of `specs/` to avoid confusing scaffold output with current work.
 
 ## Roles
 

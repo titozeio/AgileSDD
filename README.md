@@ -24,7 +24,7 @@ AgileSDD is built around a few simple ideas:
 - Keep the flow practical. The framework should help prototyping, not slow it down.
 - Keep ownership clear. Developers manage Git flow and final approvals.
 
-In short, AgileSDD is a “lean constitution + docs + workflow” approach to agent-assisted development.
+In short, AgileSDD is a "lean constitution + docs + workflow" approach to agent-assisted development.
 
 ## What It Installs
 
@@ -54,7 +54,8 @@ Behavior:
 - `AGENTS.md`: the constitution for agents
 - `docs/ROADMAP.md`: the epic-level roadmap
 - `docs/ARCHITECTURE.md`: the lightweight architecture reference
-- `specs/SPECS.md`: the base product specs
+- `docs/WORKLOG.md`: short repo-level execution tracking
+- `specs/SPECS.md`: the default spec output installed into a target project
 
 ## Why This Exists
 

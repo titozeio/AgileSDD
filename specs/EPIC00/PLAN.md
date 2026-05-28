@@ -1,5 +1,7 @@
 # EPIC00 - Plan
 
+This file is the default scaffold output for a target project. Use `docs/WORKLOG.md` for this repository's live progress.
+
 ## User Story US00
 
 As a product manager I want to define the basic structure of the project so that I can set up the project to be used in Agile SDD.
