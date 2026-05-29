@@ -30,6 +30,12 @@ In short, AgileSDD is a "lean constitution + docs + workflow" approach to agent-
 
 When published, this package will act like a create-style CLI that scaffolds the workflow into a target project.
 
+To scaffold a new project with the latest published version:
+
+```bash
+npm create agile-sdd@latest
+```
+
 Expected entry points:
 
 - `npm create agile-sdd@latest <target-dir>`

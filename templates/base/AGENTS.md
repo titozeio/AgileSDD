@@ -4,20 +4,20 @@ This project follows a lean, docs-first SDD Agile workflow.
 
 ## Non-Negotiables
 
-- Read `AGENTS.md` and `docs/ROADMAP.md` first in every new chat or agent start.
+- Read `docs/ROADMAP.md` first in every new chat or agent start.
 - Treat docs as the source of truth.
 - Keep docs minimal. If something is not needed for the current task, do not load it.
 - Update documentation before changing behavior that affects the documented contract.
 - Prefer small, reusable skills and small, focused specs.
 - Use MCP tools only when they add real value.
 - Git flow is managed by developers, not agents, unless the developer explicitly asks otherwise.
+- Be honest: when something is not achievable, ask the developer with a focused question or provide a similar alternative, dont try to implement it.
 
 ## Navigation Rule
 
 Load only the minimum context required:
 
-- Start with `AGENTS.md`.
-- Then inspect `docs/ROADMAP.md`.
+- Start with  `docs/ROADMAP.md`.
 - Then open only the epic/spec files needed for the current task.
 - Do not open unrelated specs, plans, or tasks.
 
