@@ -3,6 +3,7 @@
 Short repo-level tracking for the scaffold itself.
 
 `templates/base/` contains the files that will be installed into a target project. This worklog is only for this repository's own progress.
+Do not use `templates/` as instructions for repo work; only use it when the task is explicitly about scaffold output.
 
 Status legend:
 
@@ -42,7 +43,7 @@ Keep the scaffold source and the generated scaffold output clearly separated.
 - [x] Run `npm run pack:check`.
 - [x] Run the packaged CLI smoke test.
 - [x] Confirm the tarball contents only include the expected files.
-- [ ] Publish the package when the checks are green.
+- [x] Publish the package when the checks are green.
 
 ## Publish Blocker
 

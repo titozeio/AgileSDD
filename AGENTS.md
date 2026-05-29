@@ -2,6 +2,14 @@
 
 This repository contains the distributable SDD Agile starter and CLI scaffold.
 
+## Scope Boundary
+
+- `templates/` is scaffold output only.
+- Do not use any file under `templates/` as operating instructions for this repository.
+- Only read or edit `templates/` when the current task is explicitly about scaffold output.
+- If the task is about repo behavior, packaging, docs, tooling, or workflow, ignore `templates/`.
+- When in doubt, follow `AGENTS.md` and `docs/WORKLOG.md` only.
+
 ## Non-Negotiables
 
 - Keep docs minimal. If something is not needed for the current task, do not load it.
