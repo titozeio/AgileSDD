@@ -27,6 +27,7 @@ Turn the scaffold's default `AGENTS.md` and docs into a better starting point fo
 - [x] Implement the install-time skill picker with `none` / `manual` / `auto` modes and `--no-skills`.
 - [x] Define and document the `auto` policies for `grill-me` and `zoom-out`.
 - [x] Define the manual trigger and stop condition for `grill-me` during `spec` and `plan`.
+- [x] Define the manual trigger and stop condition for `zoom-out` before `implement`.
 
 
 ## TODO Tasks

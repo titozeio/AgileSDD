@@ -17,10 +17,16 @@ Use when the work feels too local, the design is unstable, or a change could rip
 
 ## Auto Policy
 
-- Use automatically when the change may affect architecture, shared abstractions, or multiple files or specs.
-- Use automatically when the task feels locally optimized but may not fit the wider product shape.
-- Use automatically when the scope or design is still unstable and a higher-level view would reduce rework.
-- Do not use automatically for tightly scoped fixes, mechanical edits, or when the current spec already settles the tradeoff.
+- Use automatically just before `implement`.
+- Use automatically when the stories and tasks are already defined and the work is about to move from definition to delivery.
+- Use automatically to check consistency with the implemented project, the architecture, and any shared abstractions.
+- Stop using it when the user explicitly wants to move on to `implement`.
+- Do not use automatically if no architecture, consistency, or cross-cutting risk is visible.
+
+## Manual Trigger
+
+- Users may invoke this skill manually with `/zoomout`.
+- Manual invocation forces a consistency review before implementation.
 
 ## Keep It Lean
 
