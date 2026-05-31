@@ -4,15 +4,194 @@ const readline = require('node:readline/promises');
 const { stdin, stdout } = require('node:process');
 
 const TEMPLATE_ROOT = path.join(__dirname, '..', 'templates', 'base');
-const TEMPLATE_FILES = [
-  'AGENTS.md',
-  'docs/ARCHITECTURE.md',
-  'docs/ROADMAP.md',
-  'specs/SPECS.md',
-  'specs/EPIC00/EPIC00.md',
-  'specs/EPIC00/PLAN.md',
-  'specs/EPIC00/TASKS.md'
+const SKILL_DEFINITIONS = [
+  {
+    key: 'grill-me',
+    relativePath: path.join('skills', 'grill-me', 'SKILL.md'),
+    allowedModes: ['none', 'manual', 'auto'],
+    defaultMode: 'auto'
+  },
+  {
+    key: 'zoom-out',
+    relativePath: path.join('skills', 'zoom-out', 'SKILL.md'),
+    allowedModes: ['none', 'manual', 'auto'],
+    defaultMode: 'manual'
+  },
+  {
+    key: 'tdd',
+    relativePath: path.join('skills', 'tdd', 'SKILL.md'),
+    allowedModes: ['none', 'manual'],
+    defaultMode: 'manual'
+  }
 ];
+const SKILL_DEFINITION_BY_PATH = new Map(SKILL_DEFINITIONS.map((definition) => [definition.relativePath, definition]));
+
+function collectTemplateFiles(rootDir) {
+  const files = [];
+
+  function walk(currentDir, relativeDir = '') {
+    const entries = fs.readdirSync(currentDir, { withFileTypes: true });
+
+    for (const entry of entries) {
+      const relativePath = path.join(relativeDir, entry.name);
+      const absolutePath = path.join(currentDir, entry.name);
+
+      if (entry.isDirectory()) {
+        walk(absolutePath, relativePath);
+        continue;
+      }
+
+      files.push(relativePath);
+    }
+  }
+
+  walk(rootDir);
+  return files.sort((left, right) => left.localeCompare(right));
+}
+
+function getDefaultSkillModes() {
+  return {
+    'grill-me': 'auto',
+    'zoom-out': 'manual',
+    tdd: 'manual'
+  };
+}
+
+function getAllSkillModes(mode) {
+  return Object.fromEntries(SKILL_DEFINITIONS.map((definition) => [definition.key, mode]));
+}
+
+function isSkillModeAllowed(definition, mode) {
+  return definition.allowedModes.includes(mode);
+}
+
+function normalizeSkillModes(skillModes) {
+  const defaults = getDefaultSkillModes();
+  const normalized = { ...defaults };
+
+  if (!skillModes) {
+    return normalized;
+  }
+
+  for (const definition of SKILL_DEFINITIONS) {
+    const selectedMode = skillModes[definition.key];
+
+    if (!selectedMode) {
+      continue;
+    }
+
+    if (isSkillModeAllowed(definition, selectedMode)) {
+      normalized[definition.key] = selectedMode;
+    }
+  }
+
+  return normalized;
+}
+
+function hasInstalledSkills(skillModes) {
+  return SKILL_DEFINITIONS.some((definition) => skillModes[definition.key] !== 'none');
+}
+
+function buildSkillsList(skillModes) {
+  const lines = [];
+
+  for (const definition of SKILL_DEFINITIONS) {
+    const mode = skillModes[definition.key];
+    if (mode === 'none') {
+      continue;
+    }
+
+    lines.push(`- \`${definition.key}\`: \`${mode}\``);
+  }
+
+  return lines.join('\n');
+}
+
+function shouldIncludeTemplate(relativePath, skillModes) {
+  if (!relativePath.startsWith('skills' + path.sep) && relativePath !== path.join('skills', 'README.md')) {
+    return true;
+  }
+
+  if (relativePath === path.join('skills', 'README.md')) {
+    return hasInstalledSkills(skillModes);
+  }
+
+  const definition = SKILL_DEFINITION_BY_PATH.get(relativePath);
+  if (!definition) {
+    return true;
+  }
+
+  return skillModes[definition.key] !== 'none';
+}
+
+function getTemplateVariables(relativePath, baseVariables, skillModes) {
+  const variables = { ...baseVariables };
+
+  if (relativePath === path.join('skills', 'README.md')) {
+    variables.skillsList = buildSkillsList(skillModes);
+    return variables;
+  }
+
+  const definition = SKILL_DEFINITION_BY_PATH.get(relativePath);
+  if (definition) {
+    variables.skillMode = skillModes[definition.key];
+  }
+
+  return variables;
+}
+
+function getDefaultSkillSelection() {
+  return normalizeSkillModes();
+}
+
+function getNoSkillSelection() {
+  return getAllSkillModes('none');
+}
+
+function parseSkillSelectionOption(value) {
+  if (!value) {
+    return null;
+  }
+
+  const normalizedValue = value.trim().toLowerCase();
+  if (normalizedValue === 'none') {
+    return getNoSkillSelection();
+  }
+
+  return null;
+}
+
+async function promptSkillSelection() {
+  const allowAutoFor = new Set(['grill-me', 'zoom-out']);
+  const selection = {};
+  const shouldInstallSkills = await confirm('Install the recommended skills bundle?', true);
+
+  if (!shouldInstallSkills) {
+    return getNoSkillSelection();
+  }
+
+  for (const definition of SKILL_DEFINITIONS) {
+    const defaultMode = definition.defaultMode;
+    const allowedModes = definition.allowedModes.join('/');
+    const answer = await prompt(`Mode for ${definition.key} (${allowedModes})`, defaultMode);
+    const normalized = answer.trim().toLowerCase();
+
+    if (definition.allowedModes.includes(normalized)) {
+      selection[definition.key] = normalized;
+      continue;
+    }
+
+    selection[definition.key] = defaultMode;
+  }
+
+  for (const definition of SKILL_DEFINITIONS) {
+    if (!allowAutoFor.has(definition.key) && selection[definition.key] === 'auto') {
+      selection[definition.key] = definition.defaultMode;
+    }
+  }
+
+  return normalizeSkillModes(selection);
+}
 
 function getProjectName(targetDir) {
   const resolved = path.resolve(targetDir);
@@ -82,21 +261,29 @@ async function scaffold(targetDir, options = {}) {
   const variables = {
     projectName: getProjectName(resolvedTarget)
   };
+  const templateFiles = collectTemplateFiles(TEMPLATE_ROOT);
+  const skillModes = normalizeSkillModes(options.skillModes);
 
   const results = [];
-  for (const relativePath of TEMPLATE_FILES) {
+  for (const relativePath of templateFiles) {
+    if (!shouldIncludeTemplate(relativePath, skillModes)) {
+      results.push({ file: relativePath, status: 'skipped' });
+      continue;
+    }
+
     const sourcePath = path.join(TEMPLATE_ROOT, relativePath);
     const targetPath = path.join(resolvedTarget, relativePath);
-    const result = writeIfMissing(sourcePath, targetPath, variables, force);
+    const templateVariables = getTemplateVariables(relativePath, variables, skillModes);
+    const result = writeIfMissing(sourcePath, targetPath, templateVariables, force);
     results.push({ file: relativePath, ...result });
   }
 
-  return { targetDir: resolvedTarget, projectName: variables.projectName, results };
+  return { targetDir: resolvedTarget, projectName: variables.projectName, skillModes, results };
 }
 
 function printHelp() {
   process.stdout.write([
-    'Usage: create-agile-sdd [target-dir] [--force] [--yes]',
+    'Usage: create-agile-sdd [target-dir] [--force] [--yes] [--no-skills]',
     '',
     'Scaffolds the lean SDD Agile starter into the target directory.',
     '',
@@ -104,7 +291,8 @@ function printHelp() {
     '  create-agile-sdd',
     '  create-agile-sdd my-project',
     '  create-agile-sdd . --force',
-    '  create-agile-sdd --yes'
+    '  create-agile-sdd --yes',
+    '  create-agile-sdd --no-skills'
   ].join('\n') + '\n');
 }
 
@@ -114,8 +302,12 @@ function parseArgs(argv) {
   let sawTarget = false;
   let force = false;
   let yes = false;
+  let noSkills = false;
+  let skillsOption = null;
 
-  for (const arg of args) {
+  for (let index = 0; index < args.length; index += 1) {
+    const arg = args[index];
+
     if (arg === '--help' || arg === '-h') {
       return { help: true };
     }
@@ -130,6 +322,22 @@ function parseArgs(argv) {
       continue;
     }
 
+    if (arg === '--no-skills') {
+      noSkills = true;
+      continue;
+    }
+
+    if (arg === '--skills' || arg.startsWith('--skills=')) {
+      if (arg === '--skills') {
+        skillsOption = args[index + 1] || null;
+        index += 1;
+      } else {
+        skillsOption = arg.slice('--skills='.length);
+      }
+
+      continue;
+    }
+
     targetDir = arg;
     sawTarget = true;
   }
@@ -139,7 +347,9 @@ function parseArgs(argv) {
     targetDir,
     sawTarget,
     force,
-    yes
+    yes,
+    noSkills,
+    skillsOption
   };
 }
 
@@ -173,7 +383,19 @@ async function main(argv) {
     }
   }
 
-  const result = await scaffold(resolvedTarget, { force: useForce });
+  let skillModes = getDefaultSkillSelection();
+  if (parsed.noSkills) {
+    skillModes = getNoSkillSelection();
+  } else {
+    const explicitSelection = parseSkillSelectionOption(parsed.skillsOption);
+    if (explicitSelection) {
+      skillModes = explicitSelection;
+    } else if (stdin.isTTY && !parsed.yes) {
+      skillModes = await promptSkillSelection();
+    }
+  }
+
+  const result = await scaffold(resolvedTarget, { force: useForce, skillModes });
   const written = result.results.filter((item) => item.status === 'written').length;
   const skipped = result.results.filter((item) => item.status === 'skipped').length;
 
@@ -188,6 +410,13 @@ module.exports = {
   getProjectName,
   render,
   parseArgs,
+  collectTemplateFiles,
+  getDefaultSkillModes,
+  getNoSkillSelection,
+  normalizeSkillModes,
+  promptSkillSelection,
+  shouldIncludeTemplate,
+  getTemplateVariables,
   isDirectoryEmpty,
   prompt,
   confirm

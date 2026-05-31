@@ -4,22 +4,32 @@ This project follows a lean, docs-first SDD Agile workflow.
 
 ## Non-Negotiables
 
-- Read `AGENTS.md` and `docs/ROADMAP.md` first in every new chat or agent start.
+- Read `docs/ROADMAP.md` first in every new chat or agent start.
 - Treat docs as the source of truth.
 - Keep docs minimal. If something is not needed for the current task, do not load it.
 - Update documentation before changing behavior that affects the documented contract.
 - Prefer small, reusable skills and small, focused specs.
+- Use the curated skills in `skills/` only when they match the current task.
+- If `skills/README.md` exists, read it before individual skill files.
+- `auto` skills may be used proactively when the task clearly matches their policy.
+- `manual` skills should only be loaded when the user asks for them or when the task clearly calls for them.
+- `/grillme` is the manual trigger for the clarification skill.
+- If the user asks to close `spec` or `plan`, stop using `grill-me` for that artifact.
+- `/zoomout` is the manual trigger for the pre-implementation consistency review.
+- If the user asks to move on to `implement`, stop using `zoom-out` for that artifact.
+- `/tdd` is the manual trigger for the test-driven implementation skill.
 - Use MCP tools only when they add real value.
 - Git flow is managed by developers, not agents, unless the developer explicitly asks otherwise.
+- Be honest: when something is not achievable, ask the developer with a focused question or provide a similar alternative, dont try to implement it.
 
 ## Navigation Rule
 
 Load only the minimum context required:
 
-- Start with `AGENTS.md`.
-- Then inspect `docs/ROADMAP.md`.
+- Start with  `docs/ROADMAP.md`.
 - Then open only the epic/spec files needed for the current task.
 - Do not open unrelated specs, plans, or tasks.
+- Load `skills/grill-me/SKILL.md`, `skills/zoom-out/SKILL.md`, or `skills/tdd/SKILL.md` only when the task clearly calls for them.
 
 ## Workflow
 

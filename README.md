@@ -12,6 +12,7 @@ The goal is not to force a heavy framework into every project. The goal is to gi
 - a short `AGENTS.md` constitution
 - lightweight architecture and roadmap docs
 - a spec structure split by epic
+- a small, curated `skills/` set for clarification, architecture, and TDD
 - a repeatable `Spec -> Plan -> Tasks -> Implement -> Tests -> Review` loop
 
 ## Philosophy
@@ -29,6 +30,12 @@ In short, AgileSDD is a "lean constitution + docs + workflow" approach to agent-
 ## What It Installs
 
 When published, this package will act like a create-style CLI that scaffolds the workflow into a target project.
+
+To scaffold a new project with the latest published version:
+
+```bash
+npm create agile-sdd@latest
+```
 
 Expected entry points:
 
@@ -48,12 +55,17 @@ Behavior:
 - If you run it in a terminal without enough information, it prompts for the missing target directory.
 - If the target project already exists, it does not overwrite files unless you pass `--force`.
 - Use `--yes` to skip confirmation prompts in automation-friendly runs.
+- The installer can also set up a small recommended skills bundle during interactive setup, with `grill-me` defaulting to `auto`, `zoom-out` and `tdd` defaulting to `manual`, and `--no-skills` or `--skills none` to skip it entirely.
 
 ## Core Docs
 
 - `AGENTS.md`: the constitution for agents
 - `docs/WORKLOG.md`: short repo-level execution tracking
 - `templates/base/`: the default scaffold output installed into a target project
+
+## Credits
+
+Some of the bundled skills are adapted from `mattpocock/skills`, which is published under the MIT license. Thanks to Matt Pocock for making those skills available as a practical base to learn from and build on.
 
 ## Why This Exists
 
