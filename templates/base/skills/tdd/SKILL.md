@@ -24,3 +24,8 @@ Use when implementing a feature or fix where tests can express the desired behav
 ## Mode
 
 - `manual` only.
+
+## Manual Trigger
+
+- Users may invoke this skill manually with `/tdd`.
+- Manual invocation starts a TDD pass even if the agent would not select it automatically.

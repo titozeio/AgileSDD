@@ -63,6 +63,10 @@ Behavior:
 - `docs/WORKLOG.md`: short repo-level execution tracking
 - `templates/base/`: the default scaffold output installed into a target project
 
+## Credits
+
+Some of the bundled skills are adapted from `mattpocock/skills`, which is published under the MIT license. Thanks to Matt Pocock for making those skills available as a practical base to learn from and build on.
+
 ## Why This Exists
 
 Most spec-driven frameworks are either too heavy, too verbose, or too eager to turn every project into a ritual. AgileSDD tries to stay useful when the project is still forming, when you want fast prototyping, and when you want agents to stay helpful instead of noisy while still feeling in control.

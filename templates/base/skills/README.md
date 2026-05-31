@@ -2,6 +2,10 @@
 
 This project includes a small, optional skills bundle.
 
+## Credits
+
+These starter skills are adapted from `mattpocock/skills`, which is published under the MIT license.
+
 ## Installed
 
 {{skillsList}}

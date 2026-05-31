@@ -17,6 +17,7 @@ This project follows a lean, docs-first SDD Agile workflow.
 - If the user asks to close `spec` or `plan`, stop using `grill-me` for that artifact.
 - `/zoomout` is the manual trigger for the pre-implementation consistency review.
 - If the user asks to move on to `implement`, stop using `zoom-out` for that artifact.
+- `/tdd` is the manual trigger for the test-driven implementation skill.
 - Use MCP tools only when they add real value.
 - Git flow is managed by developers, not agents, unless the developer explicitly asks otherwise.
 - Be honest: when something is not achievable, ask the developer with a focused question or provide a similar alternative, dont try to implement it.

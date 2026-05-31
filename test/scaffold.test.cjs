@@ -65,6 +65,7 @@ test('scaffold writes the expected base files', async () => {
     });
 
     for (const relativePath of [
+      'README.md',
       'AGENTS.md',
       'docs/ARCHITECTURE.md',
       'docs/ROADMAP.md',
@@ -135,6 +136,7 @@ test('packaged CLI can scaffold a target project', () => {
     ]);
 
     for (const relativePath of [
+      'README.md',
       'AGENTS.md',
       'docs/ARCHITECTURE.md',
       'docs/ROADMAP.md',

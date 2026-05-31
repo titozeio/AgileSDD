@@ -28,6 +28,9 @@ Turn the scaffold's default `AGENTS.md` and docs into a better starting point fo
 - [x] Define and document the `auto` policies for `grill-me` and `zoom-out`.
 - [x] Define the manual trigger and stop condition for `grill-me` during `spec` and `plan`.
 - [x] Define the manual trigger and stop condition for `zoom-out` before `implement`.
+- [x] Define the manual trigger for `tdd` with `/tdd`.
+- [x] Confirmed the upstream `mattpocock/skills` repo uses the MIT license.
+- [x] Added a scaffolded `README.md` so the installed project also carries the skills credit note.
 
 
 ## TODO Tasks
