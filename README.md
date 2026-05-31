@@ -12,6 +12,7 @@ The goal is not to force a heavy framework into every project. The goal is to gi
 - a short `AGENTS.md` constitution
 - lightweight architecture and roadmap docs
 - a spec structure split by epic
+- a small, curated `skills/` set for clarification, architecture, and TDD
 - a repeatable `Spec -> Plan -> Tasks -> Implement -> Tests -> Review` loop
 
 ## Philosophy

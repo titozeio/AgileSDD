@@ -4,15 +4,29 @@ const readline = require('node:readline/promises');
 const { stdin, stdout } = require('node:process');
 
 const TEMPLATE_ROOT = path.join(__dirname, '..', 'templates', 'base');
-const TEMPLATE_FILES = [
-  'AGENTS.md',
-  'docs/ARCHITECTURE.md',
-  'docs/ROADMAP.md',
-  'specs/SPECS.md',
-  'specs/EPIC00/EPIC00.md',
-  'specs/EPIC00/PLAN.md',
-  'specs/EPIC00/TASKS.md'
-];
+
+function collectTemplateFiles(rootDir) {
+  const files = [];
+
+  function walk(currentDir, relativeDir = '') {
+    const entries = fs.readdirSync(currentDir, { withFileTypes: true });
+
+    for (const entry of entries) {
+      const relativePath = path.join(relativeDir, entry.name);
+      const absolutePath = path.join(currentDir, entry.name);
+
+      if (entry.isDirectory()) {
+        walk(absolutePath, relativePath);
+        continue;
+      }
+
+      files.push(relativePath);
+    }
+  }
+
+  walk(rootDir);
+  return files.sort((left, right) => left.localeCompare(right));
+}
 
 function getProjectName(targetDir) {
   const resolved = path.resolve(targetDir);
@@ -82,9 +96,10 @@ async function scaffold(targetDir, options = {}) {
   const variables = {
     projectName: getProjectName(resolvedTarget)
   };
+  const templateFiles = collectTemplateFiles(TEMPLATE_ROOT);
 
   const results = [];
-  for (const relativePath of TEMPLATE_FILES) {
+  for (const relativePath of templateFiles) {
     const sourcePath = path.join(TEMPLATE_ROOT, relativePath);
     const targetPath = path.join(resolvedTarget, relativePath);
     const result = writeIfMissing(sourcePath, targetPath, variables, force);
@@ -188,6 +203,7 @@ module.exports = {
   getProjectName,
   render,
   parseArgs,
+  collectTemplateFiles,
   isDirectoryEmpty,
   prompt,
   confirm

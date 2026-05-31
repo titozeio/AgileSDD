@@ -18,8 +18,10 @@ Turn the scaffold's default `AGENTS.md` and docs into a better starting point fo
 
 ## Next steps
 
+- [x] Incorporate useful skills well known in the communtiy to the template folder (trying to follow the lean phyloshophy above all else).
+- [ ] Check if we could add our own commands (similar to "/grillme"). Can we? what would be interesting for the user? what is needed to do it?
 - [ ] Multi-agents approach for AgileSDD
-- [ ] Check if we could add commands (for example "/AgileSDDNext") for agents in the projects with scaffolded code.
+
 
 ## TODO Tasks
 
@@ -38,6 +40,7 @@ Turn the scaffold's default `AGENTS.md` and docs into a better starting point fo
 - [x] Keep the packaging checks easy to run before publication.
 - [x] Keep the base templates aligned with the scaffold product.
 - [x] Avoid mixing product output with repo execution notes.
+- [x] Added a minimal curated skills bundle to the scaffold with recursive template copying.
 
 
 

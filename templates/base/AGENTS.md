@@ -9,6 +9,7 @@ This project follows a lean, docs-first SDD Agile workflow.
 - Keep docs minimal. If something is not needed for the current task, do not load it.
 - Update documentation before changing behavior that affects the documented contract.
 - Prefer small, reusable skills and small, focused specs.
+- Use the curated skills in `skills/` only when they match the current task.
 - Use MCP tools only when they add real value.
 - Git flow is managed by developers, not agents, unless the developer explicitly asks otherwise.
 - Be honest: when something is not achievable, ask the developer with a focused question or provide a similar alternative, dont try to implement it.
@@ -20,6 +21,7 @@ Load only the minimum context required:
 - Start with  `docs/ROADMAP.md`.
 - Then open only the epic/spec files needed for the current task.
 - Do not open unrelated specs, plans, or tasks.
+- Load `skills/grill-me/SKILL.md`, `skills/zoom-out/SKILL.md`, or `skills/tdd/SKILL.md` only when the task clearly calls for them.
 
 ## Workflow
 
