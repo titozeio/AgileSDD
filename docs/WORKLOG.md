@@ -31,6 +31,7 @@ Turn the scaffold's default `AGENTS.md` and docs into a better starting point fo
 - [x] Define the manual trigger for `tdd` with `/tdd`.
 - [x] Confirmed the upstream `mattpocock/skills` repo uses the MIT license.
 - [x] Added a scaffolded `README.md` so the installed project also carries the skills credit note.
+- [x] Added setup notes for the recommended skills bundle and its manual triggers.
 
 
 ## TODO Tasks

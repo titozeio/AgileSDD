@@ -15,3 +15,9 @@ These starter skills are adapted from `mattpocock/skills`, which is published un
 - `auto`: the agent may use the skill proactively when the task clearly matches the policy in the skill file.
 - `manual`: the agent should only load the skill when the user asks for it or when the task clearly calls for it.
 - `none`: the skill was not installed.
+
+## Triggers
+
+- `/grillme` for clarification during `spec` and `plan`.
+- `/zoomout` for the pre-implementation consistency review.
+- `/tdd` for a manual red-green-refactor pass.
