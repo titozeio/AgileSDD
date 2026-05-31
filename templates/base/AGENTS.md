@@ -10,6 +10,11 @@ This project follows a lean, docs-first SDD Agile workflow.
 - Update documentation before changing behavior that affects the documented contract.
 - Prefer small, reusable skills and small, focused specs.
 - Use the curated skills in `skills/` only when they match the current task.
+- If `skills/README.md` exists, read it before individual skill files.
+- `auto` skills may be used proactively when the task clearly matches their policy.
+- `manual` skills should only be loaded when the user asks for them or when the task clearly calls for them.
+- `/grillme` is the manual trigger for the clarification skill.
+- If the user asks to close `spec` or `plan`, stop using `grill-me` for that artifact.
 - Use MCP tools only when they add real value.
 - Git flow is managed by developers, not agents, unless the developer explicitly asks otherwise.
 - Be honest: when something is not achievable, ask the developer with a focused question or provide a similar alternative, dont try to implement it.

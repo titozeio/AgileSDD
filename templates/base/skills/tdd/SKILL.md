@@ -1,6 +1,7 @@
 ---
 name: tdd
 description: Build or change code using a red-green-refactor loop.
+mode: {{skillMode}}
 ---
 
 # TDD
@@ -19,3 +20,7 @@ Use when implementing a feature or fix where tests can express the desired behav
 - Test behavior, not internals.
 - One vertical slice at a time.
 - End with the regression test that protects the fix.
+
+## Mode
+
+- `manual` only.

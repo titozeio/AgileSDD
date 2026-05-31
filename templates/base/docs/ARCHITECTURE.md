@@ -12,6 +12,7 @@ This project is a lightweight scaffold for Spec Driven Development combined with
 - Lean context loading: each agent reads only what it needs.
 - Docs are the source of truth.
 - A tiny curated `skills/` set covers clarification, architecture, and TDD.
+- Skills can be installed as `none`, `manual`, or `auto`, but only when the user opts in.
 - External capabilities are added through MCP when needed.
 
 ## Repository Layers

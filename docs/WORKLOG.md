@@ -19,8 +19,14 @@ Turn the scaffold's default `AGENTS.md` and docs into a better starting point fo
 ## Next steps
 
 - [x] Incorporate useful skills well known in the communtiy to the template folder (trying to follow the lean phyloshophy above all else).
+- [x] Define which skills are core, optional, or omitted for the lean scaffold.
+- [x] Decide the minimal install-time setup for opting into skills.
 - [ ] Check if we could add our own commands (similar to "/grillme"). Can we? what would be interesting for the user? what is needed to do it?
+- [ ] Revisit whether additional skills should be added later, keeping the scaffold lean.
 - [ ] Multi-agents approach for AgileSDD
+- [x] Implement the install-time skill picker with `none` / `manual` / `auto` modes and `--no-skills`.
+- [x] Define and document the `auto` policies for `grill-me` and `zoom-out`.
+- [x] Define the manual trigger and stop condition for `grill-me` during `spec` and `plan`.
 
 
 ## TODO Tasks
@@ -41,6 +47,9 @@ Turn the scaffold's default `AGENTS.md` and docs into a better starting point fo
 - [x] Keep the base templates aligned with the scaffold product.
 - [x] Avoid mixing product output with repo execution notes.
 - [x] Added a minimal curated skills bundle to the scaffold with recursive template copying.
+- [x] Agreed that skills should be opt-in at install time rather than forced by default.
+- [x] Agreed that `grill-me` and `zoom-out` support `none` / `manual` / `auto`, while `tdd` supports `none` / `manual`.
+- [x] Added install-time prompts and generated skill metadata to reflect the selected modes.
 
 
 
