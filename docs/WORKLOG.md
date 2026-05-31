@@ -32,6 +32,7 @@ Turn the scaffold's default `AGENTS.md` and docs into a better starting point fo
 - [x] Confirmed the upstream `mattpocock/skills` repo uses the MIT license.
 - [x] Added a scaffolded `README.md` so the installed project also carries the skills credit note.
 - [x] Added setup notes for the recommended skills bundle and its manual triggers.
+- [ ] Run a final end-to-end npm installation check against the published `0.2.0` release.
 
 
 ## TODO Tasks
