@@ -10,7 +10,7 @@ Create the first working version of the SDD Agile foundation so the project can 
 
 ## User Story
 
-**US00**: As a product manager I want to define the basic structure of the project so that I can set up the project to be used in Agile SDD.
+**US00**: As a product manager I want to define the basics of the project so that it can be developed following Agile SDD by AI agents and developers.
 
 ## Scope
 

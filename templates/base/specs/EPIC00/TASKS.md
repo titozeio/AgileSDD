@@ -7,7 +7,7 @@ Status legend:
 - `[x]` done
 - `[!]` blocked
 
-## US00: As a product manager I want to define the basic structure of the project so that I can set up the project to be used in Agile SDD
+## US00: As a product manager I want to define the basics of the project so that it can be developed following Agile SDD by AI agents and developers
 
 [ ] [T000] [@dev0] Set up the agents constitution: modify and/or extend the default `AGENTS.md` until the product manager is ok with it using it as a constitution.
 [ ] [T001] [@dev0] Set up the basic specs: define the core aspects of the project and use it to fill `specs/SPECS.md`.
