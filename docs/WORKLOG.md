@@ -16,14 +16,20 @@ Status legend:
 
 Turn the scaffold's default `AGENTS.md` and docs into a better starting point for new projects.
 
-## Next steps
 
-- [x] Incorporate useful skills well known in the communtiy to the template folder (trying to follow the lean phyloshophy above all else).
-- [x] Define which skills are core, optional, or omitted for the lean scaffold.
-- [x] Decide the minimal install-time setup for opting into skills.
-- [ ] Check if we could add our own commands (similar to "/grillme"). Can we? what would be interesting for the user? what is needed to do it?
-- [ ] Revisit whether additional skills should be added later, keeping the scaffold lean.
+## TODO Tasks
+
+- [ ] Run a final end-to-end npm installation check against the published `0.2.0` release.
 - [ ] Multi-agents approach for AgileSDD
+- [ ] Review the current scaffold docs set and identify the minimum improvements for new projects.
+- [ ] Draft a better default `AGENTS.md` for scaffolded projects.
+- [ ] Improve the default docs in the scaffold so the first run feels clearer and more useful.
+- [ ] Keep the docs set minimal while making it easier for new projects to start.
+- [ ] Verify the updated scaffold still produces a clean starter layout.
+- [ ] Revisit whether additional skills should be added later, keeping the scaffold lean.
+
+## Tasks Done
+
 - [x] Implement the install-time skill picker with `none` / `manual` / `auto` modes and `--no-skills`.
 - [x] Define and document the `auto` policies for `grill-me` and `zoom-out`.
 - [x] Define the manual trigger and stop condition for `grill-me` during `spec` and `plan`.
@@ -32,18 +38,9 @@ Turn the scaffold's default `AGENTS.md` and docs into a better starting point fo
 - [x] Confirmed the upstream `mattpocock/skills` repo uses the MIT license.
 - [x] Added a scaffolded `README.md` so the installed project also carries the skills credit note.
 - [x] Added setup notes for the recommended skills bundle and its manual triggers.
-
-
-## TODO Tasks
-
-- [ ] Review the current scaffold docs set and identify the minimum improvements for new projects.
-- [ ] Draft a better default `AGENTS.md` for scaffolded projects.
-- [ ] Improve the default docs in the scaffold so the first run feels clearer and more useful.
-- [ ] Keep the docs set minimal while making it easier for new projects to start.
-- [ ] Verify the updated scaffold still produces a clean starter layout.
-
-## Tasks Done
-
+- [x] Incorporate useful skills well known in the communtiy to the template folder (trying to follow the lean phyloshophy above all else).
+- [x] Define which skills are core, optional, or omitted for the lean scaffold.
+- [x] Decide the minimal install-time setup for opting into skills.
 - [x] Confirmed the scaffold structure and documentation baseline.
 - [x] Identified that `bin/` needed an explicit exception in `.gitignore`.
 - [x] Added a repo-level worklog to keep execution notes separate from scaffold output.

@@ -12,8 +12,7 @@ Status legend:
 
 | ID | Name | Objective | Status | Finished |
 | --- | --- | --- | --- | --- |
-| EPIC00 | Bootstrap the scaffold | Establish the constitution, architecture, specs, and roadmap for this project. | spec |  |
-| EPIC01 | First product epic | Define the first delivery epic for this project. | new |  |
+| EPIC00 | First product epic | Define the first delivery epic for this project.| spec |  |
 
 ## Notes
 
