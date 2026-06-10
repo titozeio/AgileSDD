@@ -2,7 +2,7 @@
 
 ## Objective
 
-Create the first working version of the SDD Agile foundation so the project can start normal SDD Sprint execution.
+Create the basic foundation of the project: agents constitution, initial specs, architecture and initial roadmap so the project can start normal SDD Sprint execution.
 
 ## Status
 
