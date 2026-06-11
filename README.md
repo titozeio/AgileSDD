@@ -67,7 +67,7 @@ Behavior:
 - If you run it in a terminal without enough information, it prompts for the missing target directory.
 - If the target project already exists, it does not overwrite files unless you pass `--force`.
 - Use `--yes` to skip confirmation prompts in automation-friendly runs.
-- The installer can also set up a small recommended skills bundle during interactive setup, with `grill-me` defaulting to `auto`, `zoom-out` and `tdd` defaulting to `manual`, and `--no-skills` or `--skills none` to skip it entirely.
+- The installer can also set up a small recommended skills bundle during interactive setup, with `grill-me` always installed as `auto`, `zoom-out` and `tdd` defaulting to `manual`, and `--no-skills` or `--skills none` to skip the optional skills while keeping `grill-me`.
 
 ## Core Docs
 

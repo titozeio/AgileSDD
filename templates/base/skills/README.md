@@ -1,6 +1,6 @@
 # Skills
 
-This project includes a small, optional skills bundle.
+This project includes a small skills bundle. `grill-me` is always installed, while `zoom-out` and `tdd` stay optional.
 
 ## Credits
 
@@ -9,6 +9,8 @@ These starter skills are adapted from `mattpocock/skills`, which is published un
 ## Installed
 
 {{skillsList}}
+
+`grill-me` is mandatory and is installed as `auto`.
 
 ## Mode Policy
 

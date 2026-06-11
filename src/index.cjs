@@ -8,7 +8,7 @@ const SKILL_DEFINITIONS = [
   {
     key: 'grill-me',
     relativePath: path.join('skills', 'grill-me', 'SKILL.md'),
-    allowedModes: ['none', 'manual', 'auto'],
+    allowedModes: ['manual', 'auto'],
     defaultMode: 'auto'
   },
   {
@@ -85,6 +85,8 @@ function normalizeSkillModes(skillModes) {
     }
   }
 
+  normalized['grill-me'] = 'auto';
+
   return normalized;
 }
 
@@ -145,7 +147,9 @@ function getDefaultSkillSelection() {
 }
 
 function getNoSkillSelection() {
-  return getAllSkillModes('none');
+  const selection = getAllSkillModes('none');
+  selection['grill-me'] = 'auto';
+  return normalizeSkillModes(selection);
 }
 
 function parseSkillSelectionOption(value) {

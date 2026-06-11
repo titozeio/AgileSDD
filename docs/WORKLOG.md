@@ -25,7 +25,7 @@ Turn the scaffold's default `AGENTS.md` and docs into a better starting point fo
 - [x] 5. Review `templates/base/docs/ARCHITECTURE.md` and decide whether the workflow model needs a clearer phase contract.
 - [x] 6. Review `templates/base/docs/ROADMAP.md` and decide whether the epic statuses need extra guidance for the default cycle.
 - [x] 7. Review `templates/base/specs/SPECS.md` and decide if it makes sense with all the changes done recently.
-- [ ] 8. Change the installation process so grill-me skill is a must, since we are referencing it in the first tasks of the EPIC00 epic.
+- [x] 8. Change the installation process so grill-me skill is a must, since we are referencing it in the first tasks of the EPIC00 epic.
 
 ## TODO Tasks
 
