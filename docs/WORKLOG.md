@@ -19,11 +19,12 @@ Turn the scaffold's default `AGENTS.md` and docs into a better starting point fo
 ## Priority Plan
 
 - [x] 1. Add a shared glossary for the repo and the scaffold so agents can use shorter, clearer terms.
-- [-] 2. Review `templates/base/AGENTS.md` and decide the minimum change needed to make the default cycle clearer for agents.
-- [ ] 3. Review `templates/base/README.md` and decide whether a short human-friendly cycle summary is needed.
-- [ ] 4. Review `templates/base/docs/ARCHITECTURE.md` and decide whether the workflow model needs a clearer phase contract.
-- [ ] 5. Review `templates/base/docs/ROADMAP.md` and decide whether the epic statuses need extra guidance for the default cycle.
-- [ ] 6. Review `templates/base/specs/SPECS.md` and decide whether it needs a brief cycle overview or should stay minimal.
+- [x] 2. Update `templates/base/specs/EPIC00/EPIC00.md` and `PLAN.md` so EPIC00 acts as the canonical template for future epics and plans.
+- [x] 3. Review `templates/base/AGENTS.md` and decide the minimum change needed to make the default cycle clearer for agents.
+- [ ] 4. Review `templates/base/README.md` and decide whether a short human-friendly cycle summary is needed.
+- [ ] 5. Review `templates/base/docs/ARCHITECTURE.md` and decide whether the workflow model needs a clearer phase contract.
+- [ ] 6. Review `templates/base/docs/ROADMAP.md` and decide whether the epic statuses need extra guidance for the default cycle.
+- [ ] 7. Review `templates/base/specs/SPECS.md` and decide whether it needs a brief cycle overview or should stay minimal.
 
 ## TODO Tasks
 

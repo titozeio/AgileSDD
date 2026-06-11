@@ -53,6 +53,17 @@ Spec phase:
 - If the PM does not use that format, rewrite it when it is safe to do so.
 - If the story cannot be rewritten safely, tell the PM what is missing or unclear.
 - Use `grill-me` only when the epic still needs more clarification before the spec is ready.
+- When the spec is agreed with the PM, mark the epic as `plan` in `docs/ROADMAP.md`.
+
+Plan phase:
+
+- Check whether `specs/EPICXX/PLAN.md` already exists and chek it´s status (`WIP` or `closed`)
+- If the plan is `WIP`, report the current state to the PM and ask for the next step.
+- If the plan does not exist yet, create it from the approved spec.
+- Keep the plan at the user-story level; do not split into tasks yet.
+- Record the user story order, dependencies, open questions, and PM approval.
+- Use `grill-me` only when the plan still needs more clarification before it can be approved.
+- When the plan is approved, mark it as `closed` and mark the epic´s status as `tasks` in `docs/ROADMAP.md`.
 
 ## Roles
 

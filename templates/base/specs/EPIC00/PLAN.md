@@ -1,12 +1,30 @@
 # EPIC00 - Plan
 
+This file is the canonical plan template for future `specs/EPICXX/` folders.
+
+## Status
+
+`closed`
+
 ## User Story US00
 
 As a product manager I want to define the basic structure of the project so that I can set up the project to be used in Agile SDD.
 
-## Outcome
+## User Story Order
 
-Deliver the initial framework foundation with the minimum documents needed to start normal SDD Sprint execution.
+- US00
+
+## Dependencies / Priority
+
+- `US00` is the first story because it establishes the foundation that the rest of the scaffold depends on.
+
+## Open Questions
+
+- None yet.
+
+## PM Approval
+
+- Pending.
 
 ## Acceptance Notes
 
@@ -14,5 +32,9 @@ Deliver the initial framework foundation with the minimum documents needed to st
 - The project has a lightweight architecture description in `docs/ARCHITECTURE.md`.
 - The project has the base specs in `specs/SPECS.md`.
 - The project has a starter roadmap in `docs/ROADMAP.md`.
-- The epic is broken down into clear initial tasks.
+- The epic is ready to move to `TASKS.md` once the PM approves this order.
+
+## Next Step
+
+- Move to `TASKS.md` after approval.
 
