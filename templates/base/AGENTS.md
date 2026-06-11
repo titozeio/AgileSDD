@@ -27,25 +27,35 @@ This project follows a lean, docs-first SDD Agile workflow.
 Load only the minimum context required:
 
 - Start with  `docs/ROADMAP.md`.
+- Use `docs/GLOSSARY.md` for shared shorthand like `PM`, `US`, and `epic`.
 - Then open only the epic/spec files needed for the current task.
 - Do not open unrelated specs, plans, or tasks.
 - Load `skills/grill-me/SKILL.md`, `skills/zoom-out/SKILL.md`, or `skills/tdd/SKILL.md` only when the task clearly calls for them.
 
 ## Workflow
 
-The default cycle is:
+The default cycle (sprint) is:
 
 `Spec -> Plan -> Tasks -> Implement -> Tests -> Review`
 
 Rules:
 
-- Work on one epic and one user story at a time unless the developer asks otherwise.
-- If an epic changes during execution, update docs first.
+- Work on one epic per sprint and then one user story at a time unless the developer asks otherwise.
+- If an epic, user story or task changes during execution, update docs first.
 - If a task is blocked by missing information, ask the developer with a focused question.
+
+Spec phase:
+
+- Check whether the current epic already exists and whether a spec draft is already in place.
+- If the epic is incomplete, report the current state to the PM and ask for the next step.
+- If the epic does not exist yet, define the epic and its user stories with the PM.
+- Write user stories in the form `As a X, I want Y, so I can Z` when possible.
+- If the PM does not use that format, rewrite it when it is safe to do so.
+- If the story cannot be rewritten safely, tell the PM what is missing or unclear.
+- Use `grill-me` only when the epic still needs more clarification before the spec is ready.
 
 ## Roles
 
 - Product Manager agents may work in `spec`, `plan`, `tasks`, and `review`.
 - Developer agents may work only in `implement` and `tests` for assigned tasks.
 - The developer owns final approval, especially for changes that affect scope or behavior.
-

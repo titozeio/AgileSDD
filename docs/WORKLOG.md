@@ -16,16 +16,22 @@ Status legend:
 
 Turn the scaffold's default `AGENTS.md` and docs into a better starting point for new projects.
 
+## Priority Plan
+
+- [x] 1. Add a shared glossary for the repo and the scaffold so agents can use shorter, clearer terms.
+- [-] 2. Review `templates/base/AGENTS.md` and decide the minimum change needed to make the default cycle clearer for agents.
+- [ ] 3. Review `templates/base/README.md` and decide whether a short human-friendly cycle summary is needed.
+- [ ] 4. Review `templates/base/docs/ARCHITECTURE.md` and decide whether the workflow model needs a clearer phase contract.
+- [ ] 5. Review `templates/base/docs/ROADMAP.md` and decide whether the epic statuses need extra guidance for the default cycle.
+- [ ] 6. Review `templates/base/specs/SPECS.md` and decide whether it needs a brief cycle overview or should stay minimal.
 
 ## TODO Tasks
 
-- [ ] Run a final end-to-end npm installation check against the published `0.2.0` release.
-- [ ] Multi-agents approach for AgileSDD
+- [x] Run a final end-to-end npm installation check against the published `0.2.0` release.
 - [ ] Review the current scaffold docs set and identify the minimum improvements for new projects.
+- [ ] Change the installation process so grill-me skill is a must, since we are referencing it in the first tasks of the EPIC00 epic.
 - [ ] Draft a better default `AGENTS.md` for scaffolded projects.
-- [ ] Improve the default docs in the scaffold so the first run feels clearer and more useful.
-- [ ] Keep the docs set minimal while making it easier for new projects to start.
-- [ ] Verify the updated scaffold still produces a clean starter layout.
+- [ ] Multi-agents approach for AgileSDD
 - [ ] Revisit whether additional skills should be added later, keeping the scaffold lean.
 
 ## Tasks Done

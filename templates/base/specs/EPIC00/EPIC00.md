@@ -1,4 +1,4 @@
-# EPIC00 - Bootstrap the Project
+# EPIC00 - Lay the foundation
 
 ## Objective
 
