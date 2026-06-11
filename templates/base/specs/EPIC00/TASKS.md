@@ -1,10 +1,13 @@
 # Program Planner - Task Backlog
 
+## Status
+`closed`
+
 Status legend:
 
 - `[ ]` pending
 - `[-]` in progress
-- `[T]` ready for testing
+- `[T]` ready for review
 - `[R]` in review
 - `[x]` done
 - `[!]` blocked

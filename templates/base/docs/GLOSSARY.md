@@ -8,6 +8,6 @@ Short terms used in this scaffold.
 - `Spec`: the phase where the epic and its user stories are defined.
 - `Plan`: the phase where the order of the user stories is set.
 - `Tasks`: the phase where each user story is split into small actions.
-- `Implement`: the phase where the work is built.
-- `Tests`: the phase where the work is verified.
+- `Implement`: the phase where the work is built and verified.
+- `Verification`: the checks performed inside `Implement` before review.
 - `Review`: the phase where the result is checked against the spec and plan.

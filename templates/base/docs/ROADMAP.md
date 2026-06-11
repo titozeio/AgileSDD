@@ -12,7 +12,7 @@ Status legend:
 
 | ID | Name | Objective | Status | Finished |
 | --- | --- | --- | --- | --- |
-| EPIC00 | First product epic | Create the basic foundation of the project: agents constitution, initial specs, architecture and initial roadmap so the project can start normal SDD Sprint execution.| tasks |  |
+| EPIC00 | First product epic | Create the basic foundation of the project: agents constitution, initial specs, architecture and initial roadmap so the project can start normal SDD Sprint execution.| implement |  |
 
 ## Notes
 

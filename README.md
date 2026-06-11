@@ -13,7 +13,7 @@ The goal is not to force a heavy framework into every project. The goal is to gi
 - lightweight architecture and roadmap docs
 - a spec structure split by epic
 - a small, curated `skills/` set for clarification, architecture, and TDD
-- a repeatable `Spec -> Plan -> Tasks -> Implement -> Tests -> Review` loop
+- a repeatable `Spec -> Plan -> Tasks -> Implement -> Review` loop
 
 ## Philosophy
 
@@ -76,7 +76,8 @@ The target is a system that feels close to how a good product team actually work
 - a product-minded spec phase
 - a planning phase that turns ideas into user stories
 - a task phase that stays small and actionable
-- an implementation and testing loop with room for review and correction
+- an implementation phase with built-in verification
+- a review phase with room for correction
 
 ## Current Status
 
