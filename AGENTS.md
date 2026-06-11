@@ -24,6 +24,7 @@ Load only the minimum context required:
 
 - Start with `AGENTS.md`.
 - Then read `docs/WORKLOG.md` for current repo progress.
+- Use `docs/GLOSSARY.md` for shared shorthand like `PM`, `US`, and `epic`.
 - Treat everything under `templates/base/` as scaffold output, not as instructions for this repository.
 - The workflow documented inside the scaffold is what target projects will receive, not the live operating model for this repo.
 

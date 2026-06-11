@@ -7,7 +7,8 @@ A lightweight project that will use Agile SDD.
 ## Why
 
 - Reduce agent context overhead.
-- Keep spec, plan, task, implement, test, and review phases clean.
+- Keep spec, plan, task, implement, and review phases clean.
+- Keep verification inside `Implement` so the workflow stays short.
 - Preserve traceability without heavyweight frameworks.
 - Make the workflow practical for prototyping and iteration.
 

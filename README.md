@@ -13,7 +13,19 @@ The goal is not to force a heavy framework into every project. The goal is to gi
 - lightweight architecture and roadmap docs
 - a spec structure split by epic
 - a small, curated `skills/` set for clarification, architecture, and TDD
-- a repeatable `Spec -> Plan -> Tasks -> Implement -> Tests -> Review` loop
+- a repeatable `Spec -> Plan -> Tasks -> Implement -> Review` loop
+
+## How The Cycle Works
+
+AgileSDD keeps the workflow short and docs-first, each cycle representing a sprint and focusing on a single Epic:
+
+- `Spec`: define the problem, the goal, and the user stories of the current epic.
+- `Plan`: order the user stories and record delivery decisions.
+- `Tasks`: split each user story into small, trackable tasks.
+- `Implement`: build the smallest useful change and verify it as you go.
+- `Review`: check the result against the docs and close the epic when it is ready.
+
+Each phase leaves enough context for the next one to continue without guessing.
 
 ## Philosophy
 
@@ -55,7 +67,7 @@ Behavior:
 - If you run it in a terminal without enough information, it prompts for the missing target directory.
 - If the target project already exists, it does not overwrite files unless you pass `--force`.
 - Use `--yes` to skip confirmation prompts in automation-friendly runs.
-- The installer can also set up a small recommended skills bundle during interactive setup, with `grill-me` defaulting to `auto`, `zoom-out` and `tdd` defaulting to `manual`, and `--no-skills` or `--skills none` to skip it entirely.
+- The installer can also set up a small recommended skills bundle during interactive setup, with `grill-me` always installed as `auto`, `zoom-out` and `tdd` defaulting to `manual`, and `--no-skills` or `--skills none` to skip the optional skills while keeping `grill-me`.
 
 ## Core Docs
 
@@ -76,7 +88,8 @@ The target is a system that feels close to how a good product team actually work
 - a product-minded spec phase
 - a planning phase that turns ideas into user stories
 - a task phase that stays small and actionable
-- an implementation and testing loop with room for review and correction
+- an implementation phase with built-in verification
+- a review phase with room for correction
 
 ## Current Status
 
