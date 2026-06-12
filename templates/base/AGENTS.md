@@ -22,7 +22,7 @@ This project follows a lean, docs-first SDD Agile workflow.
 - Git flow is managed by developers, not agents, unless the developer explicitly asks otherwise.
 - Be honest: when something is not achievable, ask the developer with a focused question or provide a similar alternative, dont try to implement it.
 - If a task requires defining business content, product scope, or domain specifics that are not already documented, pause and ask the PM instead of drafting assumptions.
-- **Project Bootstrapping (EPIC00):** During the initialization of a new project, the agent **must not** use the pre-existing scaffold files, template files, `README.md`, or `package.json` to infer or guess the target project's business specs, architecture, or roadmap. These files are template placeholders. The agent **must** pause and run an interactive Q&A session with the PM (using `grill-me` or via chat) before editing or creating `specs/SPECS.md`, `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`, or `AGENTS.md`.
+- **Project Bootstrapping (EPIC0):** During the initialization of a new project, the agent **must not** use the pre-existing scaffold files, template files, `README.md`, or `package.json` to infer or guess the target project's business specs, architecture, or roadmap. These files are template placeholders. The agent **must** pause and run an interactive Q&A session with the PM (using `grill-me` or via chat) before editing or creating `specs/SPECS.md`, `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`, or `AGENTS.md`.
 - The agent may draft only when the required inputs are already present in the target project's finalized docs or explicitly provided by the PM.
 - When in doubt, ask before acting.
 
