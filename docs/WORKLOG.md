@@ -30,6 +30,7 @@ None
 
 ## Tasks Done
 
+- [x] Improve agent bootstrapping in the base template by prohibiting guess-work and forcing interactive PM interviews in EPIC00.
 - [x] Implement the install-time skill picker with `none` / `manual` / `auto` modes and `--no-skills`.
 - [x] Define and document the `auto` policies for `grill-me` and `zoom-out`.
 - [x] Define the manual trigger and stop condition for `grill-me` during `spec` and `plan`.
