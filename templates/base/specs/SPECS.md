@@ -2,36 +2,26 @@
 
 ## What We Are Building
 
-A lightweight project that will use Agile SDD.
+//TBD
 
 ## Why
 
-- Reduce agent context overhead.
-- Keep spec, plan, task, implement, and review phases clean.
-- Keep verification inside `Implement` so the workflow stays short.
-- Preserve traceability without heavyweight frameworks.
-- Make the workflow practical for prototyping and iteration.
+//TBD
 
 ## How
 
-- Use a short `AGENTS.md` as the constitution.
-- Keep global architecture in `docs/ARCHITECTURE.md`.
-- Keep planning in `docs/ROADMAP.md`.
-- Keep each epic isolated in its own `specs/EPICXX/` folder.
-- Load only the minimum docs needed for the current action.
+//TBD
 
 ## Non-Goals
 
-- No large mega-prompts.
-- No agent-managed Git flow.
-- No unnecessary documentation.
-- No forced tooling unless it clearly adds value.
+//TBD
 
 ## Operating Principles
 
-- Lean by default.
-- Docs first.
-- Reusable over duplicated.
-- Clear ownership between product and development roles.
-- Incremental delivery through SDD Sprints.
+//TBD
+
+## Additional notes
+
+- This specs are just a template to be filled with the project specs (addressed by the task `[T0]` in `specs/EPIC0/TASKS.md`). This line should be removed once the specs are filled, to avoid confusion for future agents and the PM.
+- The project will be developed using the Agile SDD methodology. See `docs/METHODOLOGY.md` for more information.
 

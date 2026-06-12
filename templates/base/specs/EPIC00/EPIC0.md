@@ -1,6 +1,6 @@
-# EPIC00 - Lay the foundation
+# EPIC0 - Lay the foundation
 
-This file is the canonical epic template for future `specs/EPICXX/` folders.
+This file is the canonical epic template for future `specs/EPICX/` folders.
 
 ## Objective
 
@@ -12,7 +12,7 @@ Create the basic foundation of the project: agents constitution, initial specs, 
 
 ## User Stories
 
-**US00**: As a product manager I want to define the basics of the project so that it can be developed following Agile SDD by AI agents and developers.
+**US0**: As a product manager I want to define the basics of the project so that it can be developed following Agile SDD by AI agents and developers.
 
 ## Scope
 
@@ -23,7 +23,7 @@ Create the basic foundation of the project: agents constitution, initial specs, 
 
 ## What This Epic Teaches
 
-- `EPICXX.md` defines the epic and its user stories.
+- `EPICX.md` defines the epic and its user stories.
 - `PLAN.md` orders the user stories and records PM approval.
 - `TASKS.md` splits each approved user story into small work items.
 
@@ -33,6 +33,6 @@ Create the basic foundation of the project: agents constitution, initial specs, 
 - `docs/ARCHITECTURE.md`
 - `docs/ROADMAP.md`
 - `specs/SPECS.md`
-- `specs/EPIC00/PLAN.md`
-- `specs/EPIC00/TASKS.md`
+- `specs/EPIC0/PLAN.md`
+- `specs/EPIC0/TASKS.md`
 

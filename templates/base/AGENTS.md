@@ -21,6 +21,10 @@ This project follows a lean, docs-first SDD Agile workflow.
 - Use MCP tools only when they add real value.
 - Git flow is managed by developers, not agents, unless the developer explicitly asks otherwise.
 - Be honest: when something is not achievable, ask the developer with a focused question or provide a similar alternative, dont try to implement it.
+- If a task requires defining business content, product scope, or domain specifics that are not already documented, pause and ask the PM instead of drafting assumptions.
+- **Project Bootstrapping (EPIC00):** During the initialization of a new project, the agent **must not** use the pre-existing scaffold files, template files, `README.md`, or `package.json` to infer or guess the target project's business specs, architecture, or roadmap. These files are template placeholders. The agent **must** pause and run an interactive Q&A session with the PM (using `grill-me` or via chat) before editing or creating `specs/SPECS.md`, `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`, or `AGENTS.md`.
+- The agent may draft only when the required inputs are already present in the target project's finalized docs or explicitly provided by the PM.
+- When in doubt, ask before acting.
 
 ## Navigation Rule
 
@@ -80,7 +84,9 @@ Implement phase:
 
 - Check the next task in `specs/EPICXX/TASKS.md`.
 - If the next task is `WIP` or `blocked`, ask the PM for next steps.
-- If the next task is `pending`, provide a short implementation plan to the PM, refine it until approved, then execute it.
+- If the next task is `pending`, stop and present a short implementation plan to the PM before making any changes. Do not edit files until the PM approves the plan.
+- If the task depends on missing product, scope, or tech-stack decisions, ask focused questions first and do not infer the missing details.
+- A pending task is not a permission to execute; it only means the task is next in order.
 - Make the smallest useful change for the task.
 - Add and run the necessary tests or verification checks while implementing, and fix issues before moving on.
 - If the skill `tdd` is  set as auto, invoke it to help you refine tests. This skill can also be invoked by the user manually. 
@@ -114,3 +120,5 @@ Blocked tasks:
 - Product Manager agents may work in `spec`, `plan`, `tasks`, and `review`.
 - Developer agents may work only in `implement` for assigned tasks.
 - The developer owns final approval, especially for changes that affect scope or behavior.
+## Next steps
+Check the current status of the sprint (in the `roadmap`, locate the current epic, and its status). Follow the steps corresponding to that phase for that epic.

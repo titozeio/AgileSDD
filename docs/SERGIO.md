@@ -8,8 +8,9 @@ These a personal notes for publishing and maintaining `create-agile-sdd` for the
 2. Update `package.json` with that version.
 3. Run `npm test`.
 4. Run `npm pack --dry-run`.
-5. Publish with `npm publish`.
-6. Verify the package with `npx create-agile-sdd@latest --help` or a fresh scaffold test.
+5. Login with `npm login`.
+6. Publish with `npm publish`.
+7. Verify the package with `npx create-agile-sdd@latest --help` or a fresh scaffold test.
 
 ## Quick reminders
 
