@@ -78,7 +78,7 @@ Tasks phase:
 - Split each approved user story into small, actionable tasks that can be tracked independently.
 - Keep every task traceable to a specific user story and avoid inventing new scope.
 - If a user story cannot be split cleanly, tell the PM what is missing or unclear.
-- When the task breakdown is ready, mark it as `closed` and mark the epic as `implement` in `docs/ROADMAP.md`.
+- When the task breakdown is ready, mark it as `closed` and mark the epic as `implement` in `docs/ROADMAP.md` and in the Epic itself, before starting implementing tasks.
 
 Implement phase:
 
