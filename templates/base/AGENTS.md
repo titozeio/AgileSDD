@@ -145,12 +145,12 @@ Implement phase:
 Review phase:
 
 - **NOTES**: The review phase is not done over indidual tasks, but over User Stories. 
-- **STEP 1**: Check the next task in `specs/EPICX/TASKS.md` that is not yet marked as `[R]` or `[x]`. 
+- **STEP 1**: Check the next task in `specs/EPICX/TASKS.md` that is not yet marked as `[>]` or `[x]`. 
   - if there´s at least one, then proceed to step 2.
-  - If there are no such tasks,look for the next task marked as `[R]`. 
+  - If there are no such tasks,look for the next task marked as `[>]`. 
     - If there is at least one, locate the US corresponding to that task and proceed to step 3.
     - If there is no such task, proceed to step 5.
-- **STEP 2**: Locate the US corresponding to that task, and mark all the tasks of the US as `[R]`, and proceed to step 3.
+- **STEP 2**: Locate the US corresponding to that task, and mark all the tasks of the US as `[>]`, and proceed to step 3.
 - **STEP 3**: Check if there are still pending tasks to be implemented in the US.
   - If there are, implement them (following the same rules as in step 3 of the implementation phase), and once done, go back to step 3 of this phase.
   - If there are no such tasks, proceed to step 4.
