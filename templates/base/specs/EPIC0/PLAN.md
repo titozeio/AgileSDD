@@ -1,6 +1,6 @@
 # EPIC0 - Plan
 
-This file is both the default plan for Epic0 but also the canonical plan template for future `specs/EPICXX/` folders.
+This file is both the default plan for Epic0 but also the canonical plan template for future `specs/EPICX/` folders.
 
 ## Status
 
