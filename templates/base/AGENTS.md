@@ -1,15 +1,25 @@
 # AGENTS Constitution
 
 This project follows a lean, docs-first SDD Agile workflow.
+First of all, read and load `docs/GLOSSARY.md`.
 
+## Roles
+
+- AI Agents work as advisors during work in `spec`, `plan`, `tasks`, and `review`.
+- AI agents may work only in `implement` for assigned tasks.
+- The human developer (PM) owns final approval, especially for changes that affect scope or behavior.
+  
 ## Non-Negotiables
 
-- Read `docs/ROADMAP.md` first in every new chat or agent start.
+- In every new chat or agent start, follow the navigation rule (at the end of this document), only after you have loaded this whole document (and any other doc you are instructed to read in this one) in your context.
 - Treat docs as the source of truth.
 - Keep docs minimal. If something is not needed for the current task, do not load it.
 - Update documentation before changing behavior that affects the documented contract.
+- Load only the minimum context required for the current work
+- Open only the epic/spec files needed for the current work.
+- Do not open unrelated specs, plans, or tasks.
 - Prefer small, reusable skills and small, focused specs.
-- Use the curated skills in `skills/` only when they match the current task.
+- Use the curated skills in `skills/` only when they match the current work.
 - If `skills/README.md` exists, read it before individual skill files.
 - `auto` skills may be used proactively when the task clearly matches their policy.
 - `manual` skills should only be loaded when the user asks for them or when the task clearly calls for them.
@@ -26,16 +36,6 @@ This project follows a lean, docs-first SDD Agile workflow.
 - **Project Bootstrapping (EPIC0):** During the initialization of a new project, the agent **must not** use the pre-existing scaffold files, template files, `README.md`, or `package.json` to infer or guess the target project's business specs, architecture, or roadmap. These files are template placeholders. The agent **must** pause and run an interactive Q&A session with the PM (using `grill-me` or via chat) before editing or creating `specs/SPECS.md`, `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`, or `AGENTS.md`.
 - The agent may draft only when the required inputs are already present in the target project's finalized docs or explicitly provided by the PM.
 - When in doubt, ask before acting.
-
-## Navigation Rule
-
-Load only the minimum context required:
-
-- Start with `docs/ROADMAP.md`. Once you are finished checking all the required documents (including this one), check the current status of the sprint (in the `roadmap`, locate the current epic, and its status). Follow the steps corresponding to that phase for that epic and report to the PM.
-- Use `docs/GLOSSARY.md` for shared shorthand like `PM`, `US`, and `epic`.
-- Then open only the epic/spec files needed for the current task.
-- Do not open unrelated specs, plans, or tasks.
-- Load `skills/grill-me/SKILL.md`, `skills/zoom-out/SKILL.md`, or `skills/tdd/SKILL.md` only when the task clearly calls for them.
 
 ## Task prefixes legend:
 
@@ -62,6 +62,7 @@ Rules:
 - If an epic, user story or task changes during execution, update docs first.
 - If a task is blocked by missing information, ask the developer with a focused question.
 - Act as a senior product manager / project manager during `spec`, `plan`, `tasks`, and `review` using best practices of the Agile methodology.
+- Follow the rules of each phase of the workflow strictly, and step by step. DO NOT RUSH. DO NOT MAKE ASSUMPTIONS. If any rule contradict another rule, ask the PM what to do.
 
 Spec phase:
 
@@ -92,11 +93,11 @@ Plan phase:
 
 Tasks phase:
 
-- **STEP 1**: Check whether `specs/EPICX/TASKS.md` already exists and check its status (`WIP` or `closed`).
+- **STEP 1**: Check whether `specs/EPICX/TASKS.md` already exists and check its status.
     - If the tasks file does not exist yet, create it from the approved plan and ask the PM if he wants a draft.
         - If he agrees, proceed to step 2.
         - Otherwise just follow the PM´s instructions.
-    - If the tasks file is `WIP`, report the current state to the PM and ask for the next step.
+    - If the file exists, but is empty or the staus is not `ready` , chnage its status to `WIP`, report the current state to the PM and ask if he wants you to create the tasks.
         - If he agrees, proceed to step 2.
         - Otherwise just follow the PM´s instructions.
 - **STEP 2**: Elaborate a plan splitting each approved user story into small, actionable tasks.
@@ -105,7 +106,7 @@ Tasks phase:
     - Once the plan is ready, present it to the PM and ask for approval. 
         - If he agrees, proceed to step 3.
         - Otherwise just follow the PM´s instructions.
-- **STEP 3**: When the task breakdown is ready and approved by the PM, record it in `specs/EPICX/TASKS.md`, mark the task file as `closed` and mark the epic as `implement` in `docs/ROADMAP.md`.
+- **STEP 3**: When the task breakdown is ready and approved by the PM, record it in `specs/EPICX/TASKS.md`, mark the task file as `ready` and mark the epic as `implement` in `docs/ROADMAP.md`.
 
 Implement phase:
 
@@ -167,9 +168,10 @@ Review phase:
   - If there are no epics left, ask the PM for next steps. Any new epic created as a result of that consultation should be marked as `new`. Once the new epics  are ready (you have created the needed structure and incorporated them to the roadmap in the proper place), mark the next one as `spec` and proceed with the next sprint.
   - If there is at least one epic left, mark the next one as `spec` and proceed with a new sprint with that epic.
 
-## Roles
 
-- Product Manager agents may work in `spec`, `plan`, `tasks`, and `review`.
-- Developer agents may work only in `implement` for assigned tasks.
-- The developer owns final approval, especially for changes that affect scope or behavior.
+## Navigation Rule
+
+- Once you are finished checking all the required documents (including this one) start with `docs/ROADMAP.md`.
+- Check the current status of the sprint (in the `roadmap`, locate the current epic, and its status).
+- Follow the steps corresponding to that phase for that epic.
 

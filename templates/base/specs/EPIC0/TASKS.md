@@ -1,7 +1,7 @@
 # Program Planner - Task Backlog
 
 ## Status
-`open`
+`ready`
 
 ## US0: As a product manager I want to define the basics of the project so that it can be developed following Agile SDD by AI agents and developers
 
